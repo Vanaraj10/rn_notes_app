@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  Alert,
-  TouchableOpacity,
-  TextInput,
-  RootTagContext,
-} from "react-native";
+import { View, Alert, TouchableOpacity, TextInput } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -29,7 +22,7 @@ export default function NoteScreen() {
         setBody(note.body);
       }
     } catch (e) {
-      console.log("Error loading notes");
+      console.log("Error loading notes", e);
     }
   };
 
@@ -95,7 +88,7 @@ export default function NoteScreen() {
       >
         <TouchableOpacity
           style={{ backgroundColor: "#202020", borderRadius: 10, padding: 8 }}
-          onPress={()=>router.back()}
+          onPress={() => router.back()}
         >
           <Ionicons name="arrow-back" color="#fff" size={30} />
         </TouchableOpacity>
@@ -114,7 +107,7 @@ export default function NoteScreen() {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={{paddingHorizontal:17,flex:1,marginTop:30}}>
+      <View style={{ paddingHorizontal: 17, flex: 1, marginTop: 30 }}>
         <TextInput
           placeholder="Title"
           value={title}
@@ -122,14 +115,14 @@ export default function NoteScreen() {
           multiline
           placeholderTextColor={"#dddddd"}
           place
-          style={{ fontSize: 45,fontWeight:700,color:'#cccccc' }}
+          style={{ fontSize: 45, fontWeight: 700, color: "#cccccc" }}
         />
         <TextInput
           placeholder="Write your note here..."
           value={body}
           onChangeText={setBody}
           placeholderTextColor={"#cccccc"}
-          style={{fontSize:20,fontWeight:'500',color:'#bbbbbb'}}
+          style={{ fontSize: 20, fontWeight: "500", color: "#bbbbbb" }}
           multiline
           textAlignVertical="top"
         />

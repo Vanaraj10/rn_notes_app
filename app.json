@@ -1,25 +1,30 @@
 {
   "expo": {
     "name": "StarLight",
-    "slug": "StarLight Notes",
+    "slug": "starlight-notes",
+    "owner": "vanaraj10",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
     "scheme": "notesapp",
-    "userInterfaceStyle":"automatic",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "splash":{
-      "backgroundColor":"#121212",
-      "resizeMode":"contain"
+    "splash": {
+      "image": "./assets/logo.png",
+      "backgroundColor": "#121212",
+      "resizeMode": "contain"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#121212"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.vanaraj10.StarLightNotes",
+      "jsEngine": "hermes"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +36,7 @@
       [
         "expo-splash-screen",
         {
+          "image": "./assets/logo.png",
           "resizeMode": "contain",
           "backgroundColor": "#121212"
         }
@@ -38,6 +44,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "60690b20-36ff-4047-9bec-c5fcf61186df"
+      }
     }
   }
 }
